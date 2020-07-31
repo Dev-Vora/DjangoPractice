@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% block content %}
+    <form action="{% url 'update' todo.id %}" method="POST">
+        {% csrf_token %}
+          <div class="form-group">
+            <label class="col-form-label" for="inputDefault">Enter Todo</label>
+            <input type="text" class="form-control w-25" value ="{{todo.todo}}" placeholder="Enter Todo" id="todo" name="todo">
+          </div>
+          <input type="submit" name="submit" value="submit"/>
+    </form>
+{% endblock content %}
